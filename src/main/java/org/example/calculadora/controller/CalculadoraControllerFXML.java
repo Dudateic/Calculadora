@@ -2,15 +2,13 @@ package org.example.calculadora.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import org.example.calculadora.util.Validador;
 
 public class CalculadoraControllerFXML{
 
     @FXML private TextField displayResultado;
+    @FXML private Label displayOperacao;
     @FXML private ListView<String> historicoListView;
 
     private final CalculadoraController controller = new CalculadoraController();
@@ -36,6 +34,9 @@ public class CalculadoraControllerFXML{
         try{
             primeiroNumero = Validador.validarNumero(displayResultado.getText());
             operador = ((Button) event.getSource()).getText();
+            displayOperacao.setText(
+                    primeiroNumero + " " + operador
+            );
             iniciarNovoNumero = true;
         }catch(IllegalArgumentException e){
             mostrarErro(e.getMessage());
@@ -62,10 +63,14 @@ public class CalculadoraControllerFXML{
             }
 
             atualizarHistorico();
-            displayResultado.setText(String.valueOf(controller.getUltimoValor()));
+            displayOperacao.setText(
+                    primeiroNumero + " " + operador + " " + segundoNumero + " ="
+            );
+            displayResultado.setText(
+                    String.valueOf(controller.getUltimoValor())
+            );
             operador = "";
             iniciarNovoNumero = true;
-
         } catch (IllegalArgumentException e){
             mostrarErro(e.getMessage());
         }
@@ -89,6 +94,7 @@ public class CalculadoraControllerFXML{
     @FXML
     private void onBotaoLimparClicado(ActionEvent event){
         displayResultado.setText("");
+        displayOperacao.setText("");
         primeiroNumero = 0;
         operador = "";
         iniciarNovoNumero = true;

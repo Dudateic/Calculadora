@@ -13,41 +13,48 @@ public class CalculadoraService {
         this.model = model;
     }
 
-    private void registrar(String registro, double resultado){
-        model.getHistorico().adicionar(registro);
+    private void registrar(double a, String operador, double b, double resultado){
+        model.getHistorico().adicionar(
+                a + " " + operador + " " + b + " = " + resultado
+        );
         model.setUltimoValor(resultado);
     }
 
     public void somar(double a, double b){
         double r = a + b;
-        registrar(a + " + " + b + " = " + r, r);
+        registrar(a, "+", b, r);
     }
 
     public void subtrair(double a, double b){
         double r = a - b;
-        registrar(a + " - " + b + " = " + r, r);
+        registrar(a, "-", b, r);
     }
 
     public void multiplicar(double a, double b){
         double r = a * b;
-        registrar(a + " × " + b + " = " + r, r);
+        registrar(a, "×", b, r);
     }
 
     public void dividir(double a, double b){
         Validador.validarDivisao(b);
         double r = a / b;
-        registrar(a + " ÷ " + b + " = " + r, r);
+        registrar(a, "÷", b, r);
     }
 
     public void potencia(double a, double b){
         double r = Math.pow(a, b);
-        registrar(a + " ^ " + b + " = " + r, r);
+        registrar(a, "^", b, r);
     }
 
     public void raizQuadrada(double a){
         Validador.validarRaizQuadrada(a);
         double r = Math.sqrt(a);
-        registrar("√" + a + " = " + r, r);
+
+        model.getHistorico().adicionar(
+                "√" + a + " = " + r
+        );
+
+        model.setUltimoValor(r);
     }
 
     public double getUltimoValor(){

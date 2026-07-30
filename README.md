@@ -1,57 +1,123 @@
 <div align="center">
 
-<h1>Calculadora JavaFX</h1>
+# Calculadora JavaFX
 
-<p>
-Aplicação desenvolvida para fins acadêmicos, com o objetivo de consolidar conceitos da linguagem Java e do padrão arquitetural MVC (Model–View–Controller).
-</p>
+> Aplicação gráfica desenvolvida em JavaFX para estudo de Programação Orientada a Objetos, arquitetura MVC e organização de código.
 
-<p>
-<img src="https://img.shields.io/badge/Status-Finalizado-success?style=flat-square"/>
-<img src="https://img.shields.io/badge/Versão-1.0-orange?style=flat-square"/>
-<img src="https://img.shields.io/badge/Linguagem-Java-red?style=flat-square&logo=java&logoColor=white"/>
-<img src="https://img.shields.io/badge/UI-JavaFX-4a6fa5?style=flat-square"/>
-<img src="https://img.shields.io/badge/Arquitetura-MVC-success?style=flat-square"/>
-</p>
+![Java](https://img.shields.io/badge/Java-17+-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![JavaFX](https://img.shields.io/badge/JavaFX-UI-4a6fa5?style=flat-square)
+![Maven](https://img.shields.io/badge/Maven-Build-C71A36?style=flat-square&logo=apachemaven)
+![Architecture](https://img.shields.io/badge/Arquitetura-MVC-success?style=flat-square)
+![Status](https://img.shields.io/badge/status-finalizado-brightgreen?style=flat-square)
 
 </div>
 
-<hr/>
+---
 
-<h2>Descrição</h2>
+## Sumário
 
-<p>
-Esta aplicação consiste em uma calculadora gráfica desenvolvida em <strong>JavaFX</strong>, projetada para o estudo prático de <strong>Programação Orientada a Objetos</strong>, <strong>arquitetura em camadas</strong> e <strong>boas práticas de organização de código</strong>.
-</p>
+- [01 · Visão Geral](#01--visão-geral)
+- [02 · Funcionalidades](#02--funcionalidades)
+- [03 · Arquitetura](#03--arquitetura)
+- [04 · Estrutura do Projeto](#04--estrutura-do-projeto)
+- [05 · Como Executar](#05--como-executar)
 
-<p>
-O projeto foi estruturado seguindo o padrão <strong>MVC</strong>, com separação clara entre apresentação, controle e lógica da aplicação, além da introdução de uma camada de serviço para isolar regras de negócio.
-</p>
+---
 
-<hr/>
+# 01 · Visão Geral
 
-<h2>Objetivos Acadêmicos</h2>
+Este projeto consiste em uma **calculadora gráfica desenvolvida em JavaFX**, criada para aplicar conceitos de **Programação Orientada a Objetos**, desenvolvimento de interfaces gráficas e arquitetura de software.
 
-<ul>
-  <li>Aplicar conceitos fundamentais da linguagem Java</li>
-  <li>Desenvolver interfaces gráficas com JavaFX e FXML</li>
-  <li>Implementar o padrão arquitetural MVC</li>
-</ul>
+A aplicação utiliza o padrão **MVC (Model–View–Controller)**, separando interface, controle de eventos e regras de negócio.
 
-<hr/>
+Além disso, foi implementada uma camada de serviço para centralizar as operações matemáticas e facilitar a manutenção do sistema.
 
-<h2>Funcionalidades</h2>
+---
 
-<ul>
-  <li>Operações aritméticas básicas (adição, subtração, multiplicação e divisão)</li>
-  <li>Potenciação</li>
-  <li>Raiz quadrada com validação de domínio</li>
-  <li>Registro e exibição de histórico de operações</li>
-  <li>Limpeza do histórico</li>
-</ul>
+# 02 · Funcionalidades
 
-<h2>Considerações Finais</h2>
+| Funcionalidade | Descrição |
+|---|---|
+| Operações básicas | Soma, subtração, multiplicação e divisão |
+| Potenciação | Cálculo de exponenciação |
+| Raiz quadrada | Operação com validação |
+| Histórico | Registro das operações realizadas |
+| Limpeza | Remoção do histórico |
 
-<p>
-Este projeto foi desenvolvido exclusivamente para fins educacionais.
+---
+
+# 03 · Arquitetura
+
+Fluxo principal da aplicação:
+
+```
+View (JavaFX/FXML)
+        |
+        v
+Controller
+        |
+        v
+Service
+        |
+        v
+Model
+```
+
+| Camada | Responsabilidade |
+|---|---|
+| View | Interface gráfica |
+| Controller | Controle das ações do usuário |
+| Service | Regras matemáticas |
+| Model | Dados da aplicação |
+
+---
+
+# 04 · Estrutura do Projeto
+
+```
+calculadora/
+├── pom.xml
+├── mvnw
+├── README.md
+│
+└── src/main/
+    ├── java/
+    │   └── org/example/calculadora/
+    │       ├── app/
+    │       │   └── App.java
+    │       ├── controller/
+    │       │   ├── CalculadoraController.java
+    │       │   └── CalculadoraControllerFXML.java
+    │       ├── model/
+    │       │   ├── Calculadora.java
+    │       │   └── Historico.java
+    │       ├── service/
+    │       │   └── CalculadoraService.java
+    │       └── util/
+    │           └── Validador.java
+    │
+    └── resources/
+        └── CalculadoraView.fxml
+```
+
+---
+
+# 05 · Como Executar
+
+## Requisitos
+
+- Java JDK 17+
+- Maven
+- JavaFX
+
+Executar:
+
+```bash
+./mvnw javafx:run
+```
+
+---
+
+<p align="center">
+Calculadora JavaFX · Projeto Acadêmico · 2026
 </p>

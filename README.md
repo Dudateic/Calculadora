@@ -2,17 +2,12 @@
 
 # Calculadora JavaFX
 
-> Aplicação gráfica desenvolvida em JavaFX para estudo de Programação Orientada a Objetos, arquitetura MVC e organização de código.
-
-![Java](https://img.shields.io/badge/Java-17+-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![JavaFX](https://img.shields.io/badge/JavaFX-UI-4a6fa5?style=flat-square)
-![Maven](https://img.shields.io/badge/Maven-Build-C71A36?style=flat-square&logo=apachemaven)
-![Architecture](https://img.shields.io/badge/Arquitetura-MVC-success?style=flat-square)
-![Status](https://img.shields.io/badge/status-finalizado-brightgreen?style=flat-square)
-
 </div>
 
----
+> Aplicação gráfica desenvolvida em JavaFX para estudo de Programação Orientada a Objetos, arquitetura MVC e organização de código.
+
+
+
 
 ## Sumário
 
@@ -22,7 +17,6 @@
 - [04 · Estrutura do Projeto](#04--estrutura-do-projeto)
 - [05 · Como Executar](#05--como-executar)
 
----
 
 # 01 · Visão Geral
 
@@ -32,7 +26,6 @@ A aplicação utiliza o padrão **MVC (Model–View–Controller)**, separando i
 
 Além disso, foi implementada uma camada de serviço para centralizar as operações matemáticas e facilitar a manutenção do sistema.
 
----
 
 # 02 · Funcionalidades
 
@@ -44,7 +37,6 @@ Além disso, foi implementada uma camada de serviço para centralizar as operaç
 | Histórico | Registro das operações realizadas |
 | Limpeza | Remoção do histórico |
 
----
 
 # 03 · Arquitetura
 
@@ -70,7 +62,6 @@ Model
 | Service | Regras matemáticas |
 | Model | Dados da aplicação |
 
----
 
 # 04 · Estrutura do Projeto
 
@@ -100,7 +91,6 @@ calculadora/
         └── CalculadoraView.fxml
 ```
 
----
 
 # 05 · Como Executar
 
@@ -115,7 +105,6 @@ Executar:
 ```bash
 ./mvnw javafx:run
 ```
-
 ---
 
 <p align="center">
